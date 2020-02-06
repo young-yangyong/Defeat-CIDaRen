@@ -1,0 +1,19 @@
+在fiddler script的OnBeforeResponse方法中添加
+
+	if (oSession.HostnameIs("api.vocabgo.com")&&oSession.oResponse.headers.ExistsAndContains("Content-Type", "application/json")) {
+
+		oSession["ui-color"] ="orange";
+		oSession.utilDecodeResponse();
+		//消除保存的请求可能存在乱码的情况
+		var fso;
+		var file;
+		fso = new ActiveXObject("Scripting.FileSystemObject");
+	//创建文件夹保存json数据
+	if(!fso.FolderExists(".\\json")){     //判断文件夹是否存在，不存在就创建
+                	fso.CreateFolder (".\\json");
+	}
+		//文件保存路径，可自定义
+		file = fso.OpenTextFile(".\\json\\json.txt",2 ,true, true);
+		file.writeLine(oSession.GetResponseBodyAsString());
+		file.close();
+	}

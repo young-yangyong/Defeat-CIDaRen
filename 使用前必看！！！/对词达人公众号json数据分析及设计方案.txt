@@ -1,0 +1,7 @@
+data-options- answer=null   语音   tip=没提示，默认开始
+data-options- answer=true/false 词义判断   打印content  tips=选出句中划线单词词义(全部词义）
+data-options- answer=true/false 词音判断   打印content  tip=tips=听单词，选出词义（全部词义）
+data-options- answer=true/false 选词   打印content    tips=选出与所给单词常见的搭配词
+data-answer_content-answer_str 填写词组  打印answer_str      tips=按正确顺序选择单词，组成正确的表达
+data-options- answer=true/false 补全句子   打印content    tips=选择合适的单词,补全句子（全部词义）
+data- answer_content   默写单词  打印answer_content    tips=根据中文意思，填入所缺单词（基本词义）
